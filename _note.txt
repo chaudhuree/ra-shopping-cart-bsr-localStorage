@@ -1,0 +1,27 @@
+## how to add to the localStorage store:
+
+1. set data into localStorage
+
+```
+useEffect(() => {
+  const data = localStorage.setItem('cartItems', JSON.stringify(cartItems));
+}, [cartItems])
+```
+
+2. get data from localStorage
+
+```
+ const cartItemsFromLocalStorage = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
+```
+
+3. setCartItems from localStorage
+
+```
+first it was like this:
+const [cartItems, setCartItems] = useState([]);
+```
+
+```
+after modification:
+const [cartItems, setCartItems] = useState(cartItemsFromLocalStorage);
+```

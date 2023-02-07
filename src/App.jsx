@@ -6,6 +6,7 @@ import Header from './components/Header';
 import data from './data';
 function App() {
   const { products } = data;
+  // docs: localstorage
   //getdata from localstorage
   const cartItemsFromLocalStorage = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
   const [cartItems, setCartItems] = useState(cartItemsFromLocalStorage);
@@ -85,6 +86,7 @@ function App() {
     totalAmmountToPay
   }
   console.log(priceList)
+  // docs: localstorage
 // localstorage related code
 useEffect(() => {
   const data = localStorage.setItem('cartItems', JSON.stringify(cartItems));
